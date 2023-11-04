@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 let cellSize: CGFloat = 30 // 偶数にする。
-let xCellCount :CGFloat = (10 * 2) + 1 // 奇数にする。
+let xCellCount :CGFloat = (8 * 2) + 1 // 奇数にする。
 let yCellCount :CGFloat = (12 * 2) // 偶数にする・
 
 class Tetromino {
@@ -224,20 +224,186 @@ class BlockT : Tetromino {
     init(pos: CGPoint) {
         self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
         self.minoL.position = CGPoint(x:pos.x - cellSize, y:pos.y)
-        self.minoL.fillColor = .blue
+        self.minoL.fillColor = .magenta
         self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
         self.minoC.position = CGPoint(x:pos.x, y:pos.y)
-        self.minoC.fillColor = .blue
+        self.minoC.fillColor = .magenta
         self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
         self.minoR.position = CGPoint(x:pos.x + cellSize, y:pos.y)
-        self.minoR.fillColor = .blue
+        self.minoR.fillColor = .magenta
         self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
         self.minoU.position = CGPoint(x:pos.x, y:pos.y - cellSize)
-        self.minoU.fillColor = .blue
+        self.minoU.fillColor = .magenta
         
         super.init()
         super.minos.append(contentsOf: [
             self.minoL, self.minoC, self.minoR, self.minoU])
         super.minoCenter = self.minoC
     }    
+}
+
+
+class BlockI : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x - cellSize, y:pos.y)
+        self.minoL.fillColor = .cyan
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .cyan
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x + cellSize, y:pos.y)
+        self.minoR.fillColor = .cyan
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x + cellSize + cellSize, y:pos.y )
+        self.minoU.fillColor = .cyan
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
+}
+
+class BlockO : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x - cellSize, y:pos.y)
+        self.minoL.fillColor = .yellow
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .yellow
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x, y:pos.y - cellSize)
+        self.minoR.fillColor = .yellow
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x - cellSize, y:pos.y - cellSize)
+        self.minoU.fillColor = .yellow
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
+}
+
+
+class BlockL : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x, y:pos.y + cellSize)
+        self.minoL.fillColor = .orange
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .orange
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x, y:pos.y - cellSize)
+        self.minoR.fillColor = .orange
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x + cellSize, y:pos.y - cellSize)
+        self.minoU.fillColor = .orange
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
+}
+
+
+class BlockS : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x, y:pos.y + cellSize)
+        self.minoL.fillColor = .green
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .green
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x + cellSize, y:pos.y)
+        self.minoR.fillColor = .green
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x + cellSize, y:pos.y - cellSize)
+        self.minoU.fillColor = .green
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
+}
+
+class BlockJ : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x, y:pos.y + cellSize)
+        self.minoL.fillColor = .blue
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .blue
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x, y:pos.y - cellSize)
+        self.minoR.fillColor = .blue
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x - cellSize, y:pos.y - cellSize)
+        self.minoU.fillColor = .blue
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
+}
+
+
+class BlockZ : Tetromino {
+    private var minoL : SKShapeNode
+    private var minoC : SKShapeNode
+    private var minoR : SKShapeNode
+    private var minoU : SKShapeNode
+    
+    init(pos: CGPoint) {
+        self.minoL = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoL.position = CGPoint(x:pos.x, y:pos.y + cellSize)
+        self.minoL.fillColor = .white
+        self.minoC = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoC.position = CGPoint(x:pos.x, y:pos.y)
+        self.minoC.fillColor = .white
+        self.minoR = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoR.position = CGPoint(x:pos.x - cellSize, y:pos.y)
+        self.minoR.fillColor = .white
+        self.minoU = SKShapeNode(rectOf: CGSize(width: cellSize, height: cellSize))
+        self.minoU.position = CGPoint(x:pos.x - cellSize, y:pos.y - cellSize)
+        self.minoU.fillColor = .white
+        
+        super.init()
+        super.minos.append(contentsOf: [
+            self.minoL, self.minoC, self.minoR, self.minoU])
+        super.minoCenter = self.minoC
+    }
 }

@@ -21,11 +21,30 @@ class GameScene: SKScene {
     private var stackMinos : [SKShapeNode] = []
     
     func genTetromino() {
-        let t = BlockT(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
-        for mino in t.minos {
+        var block : Tetromino?
+        switch Int.random(in: 1..<8) {
+        case 1:
+            block = BlockT(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 2:
+            block = BlockI(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 3:
+            block = BlockO(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 4:
+            block = BlockL(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 5:
+            block = BlockS(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 6:
+            block = BlockJ(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        case 7:
+            block = BlockZ(pos : CGPoint(x:self.frame.midX, y:self.frame.midY + (((cellSize * yCellCount) / 2) + cellSize / 2)))
+        default:
+            print("")
+        }
+
+        for mino in block!.minos {
             self.addChild(mino)
         }
-        self.nowBlock = t
+        self.nowBlock = block
     }
     
     func genGameController() {
