@@ -41,6 +41,34 @@ class GameScene: SKScene {
         fb.strokeColor = .white
         self.addChild(fb)
     }
+    
+    func delRows() {
+        
+        var minosPerRow: Dictionary<CGFloat, [SKShapeNode]> = [:]
+        var rowNo : CGFloat = 0
+        var delLineCnt : Int = 0
+        for mino in self.stackMinos {
+            rowNo = round(mino.position.y)
+            if (minosPerRow.keys.contains(rowNo)) {
+                minosPerRow[rowNo]!.append(mino)
+            } else {
+                minosPerRow[rowNo] = [mino]
+            }
+        }
+        
+        for row in minosPerRow.sorted(by: { $0.key < $1.key }) {
+            if (row.value.count == Int(xCellCount)) {
+                self.stackMinos.removeAll(where: { round($0.position.y) == row.key })
+                self.removeChildren(in: row.value)
+                delLineCnt += 1
+            }
+            if (delLineCnt > 0) {
+                for mino in row.value {
+                    mino.run(SKAction.moveBy(x: 0, y: CGFloat(Int(cellSize) * delLineCnt * (-1)), duration: 0))
+                }
+            }
+        }
+    }
         
     override func sceneDidLoad() {
         
@@ -109,6 +137,7 @@ class GameScene: SKScene {
         if (self.lastRectTime + 0.7 <= currentTime) {
             if (self.nowBlock?.isHarden(centerPos: CGPoint(x: self.frame.midX, y: self.frame.midY), stackMinos: self.stackMinos) == true) {
                 self.stackMinos.append(contentsOf: self.nowBlock!.minos)
+                self.delRows()
                 self.genTetromino()
             } else {
                 self.nowBlock?.move(direction : "u", centerPos: CGPoint(x: self.frame.midX, y: self.frame.midY), stackMinos: self.stackMinos)
