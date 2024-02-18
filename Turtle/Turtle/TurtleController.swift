@@ -9,6 +9,11 @@ import Foundation
 
 enum Ope: Character {
     case forward = "F"
+    case forwardA = "A"
+    case forwardB = "B"
+    case goto = "G"
+    case doNothingL = "L"
+    case doNothingR = "R"
     case rotateR = "-"
     case rotateL = "+"
     case push = "["
@@ -38,6 +43,16 @@ class TurtleController {
             switch ope {
                 case Ope.forward.rawValue:
                     self.opes.append(.forward)
+                case Ope.forwardA.rawValue:
+                    self.opes.append(.forwardA)
+                case Ope.forwardB.rawValue:
+                    self.opes.append(.forwardB)
+                case Ope.goto.rawValue:
+                    self.opes.append(.goto)
+                case Ope.doNothingL.rawValue:
+                    self.opes.append(.doNothingL)
+                case Ope.doNothingR.rawValue:
+                    self.opes.append(.doNothingR)
                 case Ope.rotateR.rawValue:
                     self.opes.append(.rotateR)
                 case Ope.rotateL.rawValue:
@@ -53,8 +68,9 @@ class TurtleController {
     }
     
     func next() -> Bool {
-        if let ope = self.opes.popLast() {
-            self.operate(ope: ope)
+        if self.opes.count > 0 {
+            self.operate(ope: self.opes[0])
+            self.opes.removeFirst()
             return true
         } else {
             return false
@@ -64,7 +80,17 @@ class TurtleController {
     private func operate(ope : Ope) {
         switch ope {
             case .forward:
-                self.turtle?.forward(distance : self.forwardDistance)
+                self.turtle?.forward(distance : self.forwardDistance, isUpdateTrack: true)
+            case .forwardA:
+                self.turtle?.forward(distance : self.forwardDistance, isUpdateTrack: true)
+            case .forwardB:
+                self.turtle?.forward(distance : self.forwardDistance, isUpdateTrack: true)
+            case .goto:
+                self.turtle?.forward(distance : self.forwardDistance, isUpdateTrack: false)
+            case .doNothingL:
+                break // Do Nothing
+            case .doNothingR:
+                break // Do Nothing
             case .rotateR:
                 self.turtle?.rotate(direction: Direction.right, degree: self.rotationDeg)
             case .rotateL:

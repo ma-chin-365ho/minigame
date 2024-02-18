@@ -15,11 +15,11 @@ enum Direction {
 struct Vec {
     var x: Double
     var y: Double
-    var angleRad: Double
+    var angleDeg: Double
 }
 
 protocol Turtle {
-    func forward(distance : Double)
+    func forward(distance : Double, isUpdateTrack: Bool)
     func warp(vec: Vec)
     func rotate(direction : Direction, degree : Double)
     func getVec() -> Vec

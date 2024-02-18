@@ -16,14 +16,19 @@ class SKTurtle : Turtle {
     var track : SKTrack?
     var angleDeg : CGFloat?
     var node : SKSpriteNode?
+    var scene : SKScene?
     
-    init(startPos: CGPoint, startAngleDeg: CGFloat) {
+    init(scene: SKScene, startPos: CGPoint, startAngleDeg: CGFloat) {
+        self.scene = scene
         self.track = SKTrack(startPos: startPos)
         self.node = SKSpriteNode(imageNamed: "turtle")
         self.node!.size = CGSize(width: TURTLE_NODE_WIDTH, height: TURTLE_NODE_HEIGHT)
         self.node!.position = startPos
         self.toAngle(degree : startAngleDeg)
         self.angleDeg = startAngleDeg
+        
+        self.scene?.addChild(self.track!.node!)
+        self.scene?.addChild(self.node!)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,7 +49,7 @@ class SKTurtle : Turtle {
         self.node!.run(action)
     }
     
-    func forward(distance: Double) {
+    func forward(distance: Double, isUpdateTrack : Bool) {
         self.mv(
             toPoint :CGPoint(
                 x: self.node!.position.x + (
@@ -54,27 +59,30 @@ class SKTurtle : Turtle {
                         CGFloat(distance) * sin(GameUtils.degreeToRadian(degree: self.angleDeg!))
                     )
             ),
-            isUpdateTrack: true
+            isUpdateTrack: isUpdateTrack
         )
     }
     
     func warp(vec: Vec) {
-        self.toAngle(degree: vec.angleRad)
+        let toPoint = CGPoint(
+            x: vec.x,
+            y: vec.y
+        )
+        self.toAngle(degree: vec.angleDeg)
         self.mv(
-            toPoint :CGPoint(
-                x: vec.x,
-                y: vec.y
-            ),
+            toPoint : toPoint,
             isUpdateTrack: false
         )
+        self.track = SKTrack(startPos: toPoint)
+        self.scene?.addChild(self.track!.node!)
     }
     
     func rotate(direction : Direction, degree: Double) {
         var byAngleDeg : CGFloat?
         if (direction == .right) {
-            byAngleDeg = degree
-        } else {
             byAngleDeg = degree * (-1)
+        } else {
+            byAngleDeg = degree
         }
         self.toAngle(degree: self.angleDeg! + byAngleDeg!)
     }
@@ -83,7 +91,7 @@ class SKTurtle : Turtle {
         let vec = Vec(
             x:self.node!.position.x,
             y:self.node!.position.y,
-            angleRad: GameUtils.degreeToRadian(degree: self.angleDeg!)
+            angleDeg: self.angleDeg!
         )
         return vec
     }

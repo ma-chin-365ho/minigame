@@ -18,27 +18,40 @@ class GameScene: SKScene {
     var track : SKTrack?
     var turtle :SKTurtle?
     var turtleController : TurtleController?
-    var drawIntervalSec : TimeInterval = 0.15
+    // var drawIntervalSec : TimeInterval = 0.15
+    var drawIntervalSec : TimeInterval = 0.0
     var oldTime : TimeInterval? = nil
     var status : GameStatus = .stop
+    var rewriteCount : Int = 5
     
     override func didMove(to view: SKView) {
-        let startPos = CGPoint(x: -350.0, y: -250.0)
-        let startAngleDeg = 0.0
-        
-        self.turtle = SKTurtle(startPos: startPos, startAngleDeg: startAngleDeg)
-        self.turtleController = TurtleController(turtle: self.turtle!)
-        
-        try? self.turtleController?.readCmd(cmd: "F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F-F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F-F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F")
-        self.turtleController?.setConfig(forwardDistance: 30.0, rotationDeg: 60.0)
-
-        self.addChild(self.turtle!.track!.node!)
-        self.addChild(self.turtle!.node!)
+        self.setLSystem(lSystem: SIERPINSKI_GASKET_02)
     }
     
+    func setLSystem(lSystem : LSystem) {
+        self.turtle = SKTurtle(
+            scene: self,
+            startPos: CGPoint(x: lSystem.startX, y: lSystem.startY),
+            startAngleDeg: lSystem.startAngleDeg
+        )
+        self.turtleController = TurtleController(turtle: self.turtle!)
+        
+        let cmd = LSystemUtil.rewrite(
+            startCmd: lSystem.startCmd,
+            rewirteRule: lSystem.rewirteRule,
+            count: self.rewriteCount
+        )
+        print(cmd)
+        try? self.turtleController?.readCmd(cmd: cmd)
+        self.turtleController?.setConfig(
+            forwardDistance: lSystem.forwardDistance,
+            rotationDeg: lSystem.rotationDeg
+        )
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         self.status = .play
+        // self.turtleController?.next()
     }
     
     func touchMoved(toPoint pos : CGPoint) {
