@@ -13,9 +13,9 @@ class SKTrack : Track {
     var node : SKShapeNode?
     private var path : CGMutablePath?
     
-    init(startPos: CGPoint) {
+    init(startPos: CGPoint, lineWidth : CGFloat) {
         self.node = SKShapeNode()
-        self.node?.lineWidth = 6.0
+        self.node?.lineWidth = lineWidth
         self.node?.strokeColor = .brown
         // self.node?.fillColor = .brown
         self.path = CGMutablePath()

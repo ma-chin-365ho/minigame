@@ -17,10 +17,12 @@ class SKTurtle : Turtle {
     var angleDeg : CGFloat?
     var node : SKSpriteNode?
     var scene : SKScene?
+    var trackLineWidth : CGFloat?
     
-    init(scene: SKScene, startPos: CGPoint, startAngleDeg: CGFloat) {
+    init(scene: SKScene, startPos: CGPoint, startAngleDeg: CGFloat, trackLineWidth : CGFloat) {
         self.scene = scene
-        self.track = SKTrack(startPos: startPos)
+        self.trackLineWidth = trackLineWidth
+        self.track = SKTrack(startPos: startPos, lineWidth: self.trackLineWidth!)
         self.node = SKSpriteNode(imageNamed: "turtle")
         self.node!.size = CGSize(width: TURTLE_NODE_WIDTH, height: TURTLE_NODE_HEIGHT)
         self.node!.position = startPos
@@ -73,7 +75,7 @@ class SKTurtle : Turtle {
             toPoint : toPoint,
             isUpdateTrack: false
         )
-        self.track = SKTrack(startPos: toPoint)
+        self.track = SKTrack(startPos: toPoint, lineWidth: self.trackLineWidth!)
         self.scene?.addChild(self.track!.node!)
     }
     

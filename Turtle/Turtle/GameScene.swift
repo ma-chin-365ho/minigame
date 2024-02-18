@@ -22,17 +22,18 @@ class GameScene: SKScene {
     var drawIntervalSec : TimeInterval = 0.0
     var oldTime : TimeInterval? = nil
     var status : GameStatus = .stop
-    var rewriteCount : Int = 5
+    var rewriteCount : Int = 6
     
     override func didMove(to view: SKView) {
-        self.setLSystem(lSystem: SIERPINSKI_GASKET_02)
+        self.setLSystem(lSystem: TREE_02)
     }
     
     func setLSystem(lSystem : LSystem) {
         self.turtle = SKTurtle(
             scene: self,
             startPos: CGPoint(x: lSystem.startX, y: lSystem.startY),
-            startAngleDeg: lSystem.startAngleDeg
+            startAngleDeg: lSystem.startAngleDeg,
+            trackLineWidth: lSystem.trackLineWidth
         )
         self.turtleController = TurtleController(turtle: self.turtle!)
         

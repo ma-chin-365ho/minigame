@@ -12,6 +12,7 @@ struct LSystem {
     var startY : Double
     var startAngleDeg : Double
     var forwardDistance : Double
+    var trackLineWidth : Double
     var rotationDeg : Double
     var startCmd : String
     var rewirteRule : Dictionary<String, String>
@@ -44,6 +45,7 @@ let KOCH_CURVE = LSystem(
     startY: -250.0,
     startAngleDeg : 0.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 60.0,
     startCmd: "F",
     rewirteRule: ["F": "F+F--F+F"]
@@ -55,6 +57,7 @@ let DRAGON_CURVE = LSystem(
     startY: -200.0,
     startAngleDeg : 90.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 90.0,
     startCmd: "A",
     rewirteRule: ["A": "A+B+", "B": "-A-B"]
@@ -66,6 +69,7 @@ let SIERPINSKI_GASKET_01 = LSystem(
     startY: 0.0,
     startAngleDeg : 0.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 60,
     startCmd: "B",
     rewirteRule: ["A": "B+A+B", "B": "A-B-A"]
@@ -77,6 +81,7 @@ let SIERPINSKI_GASKET_02 = LSystem(
     startY: -300.0,
     startAngleDeg : 180.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 120.0,
     startCmd: "R-F-F",
     rewirteRule: ["F": "FF", "R": "F-R+R+R-F"]
@@ -88,6 +93,7 @@ let HILBERT_CURVE = LSystem(
     startY: -250.0,
     startAngleDeg : 0.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 90.0,
     startCmd: "L",
     rewirteRule: ["L": "+RF-LFL-FR+", "R": "-LF+RFR+FL-"]
@@ -99,9 +105,21 @@ let TREE_01 = LSystem(
     startY: -300.0,
     startAngleDeg : 90.0,
     forwardDistance: 30.0,
+    trackLineWidth : 6.0,
     rotationDeg: 60.0,
     startCmd: "F",
     rewirteRule: ["F": "F[+FF]F[-F]F"]
+)
+
+let TREE_02 = LSystem(
+    startX: 0.0,
+    startY: -300.0,
+    startAngleDeg : 90.0,
+    forwardDistance: 3.0,
+    trackLineWidth : 0.5,
+    rotationDeg: 30.0,
+    startCmd: "F",
+    rewirteRule: ["F": "FF-[-F+F]+[+F-F]"]
 )
 
 
