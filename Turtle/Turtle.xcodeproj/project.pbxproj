@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB22C52B2B80F10700E942EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C52A2B80F10700E942EF /* AppDelegate.swift */; };
+		BB22C52D2B80F10700E942EF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BB22C52C2B80F10700E942EF /* GameScene.sks */; };
+		BB22C52F2B80F10700E942EF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BB22C52E2B80F10700E942EF /* Actions.sks */; };
+		BB22C5312B80F10700E942EF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5302B80F10700E942EF /* GameScene.swift */; };
+		BB22C5332B80F10700E942EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5322B80F10700E942EF /* ViewController.swift */; };
+		BB22C5352B80F10C00E942EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB22C5342B80F10C00E942EF /* Assets.xcassets */; };
+		BB22C5382B80F10C00E942EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB22C5362B80F10C00E942EF /* Main.storyboard */; };
+		BB22C5402B80F8B900E942EF /* SKTurtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C53F2B80F8B900E942EF /* SKTurtle.swift */; };
+		BB22C5422B81AF1500E942EF /* SKTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5412B81AF1400E942EF /* SKTrack.swift */; };
+		BB22C5442B81C29D00E942EF /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5432B81C29D00E942EF /* GameUtils.swift */; };
+		BB22C5462B81CA9100E942EF /* TurtleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5452B81CA9000E942EF /* TurtleController.swift */; };
+		BB22C5482B81CB0800E942EF /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5472B81CB0800E942EF /* Turtle.swift */; };
+		BB22C54A2B81DB9300E942EF /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22C5492B81DB9300E942EF /* Track.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB22C5272B80F10700E942EF /* Turtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB22C52A2B80F10700E942EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB22C52C2B80F10700E942EF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BB22C52E2B80F10700E942EF /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		BB22C5302B80F10700E942EF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BB22C5322B80F10700E942EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB22C5342B80F10C00E942EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB22C5372B80F10C00E942EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB22C5392B80F10C00E942EF /* Turtle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turtle.entitlements; sourceTree = "<group>"; };
+		BB22C53F2B80F8B900E942EF /* SKTurtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTurtle.swift; sourceTree = "<group>"; };
+		BB22C5412B81AF1400E942EF /* SKTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTrack.swift; sourceTree = "<group>"; };
+		BB22C5432B81C29D00E942EF /* GameUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		BB22C5452B81CA9000E942EF /* TurtleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleController.swift; sourceTree = "<group>"; };
+		BB22C5472B81CB0800E942EF /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
+		BB22C5492B81DB9300E942EF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB22C5242B80F10700E942EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB22C51E2B80F10600E942EF = {
+			isa = PBXGroup;
+			children = (
+				BB22C5292B80F10700E942EF /* Turtle */,
+				BB22C5282B80F10700E942EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB22C5282B80F10700E942EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB22C5272B80F10700E942EF /* Turtle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB22C5292B80F10700E942EF /* Turtle */ = {
+			isa = PBXGroup;
+			children = (
+				BB22C52A2B80F10700E942EF /* AppDelegate.swift */,
+				BB22C52C2B80F10700E942EF /* GameScene.sks */,
+				BB22C52E2B80F10700E942EF /* Actions.sks */,
+				BB22C5302B80F10700E942EF /* GameScene.swift */,
+				BB22C53F2B80F8B900E942EF /* SKTurtle.swift */,
+				BB22C5472B81CB0800E942EF /* Turtle.swift */,
+				BB22C5452B81CA9000E942EF /* TurtleController.swift */,
+				BB22C5412B81AF1400E942EF /* SKTrack.swift */,
+				BB22C5492B81DB9300E942EF /* Track.swift */,
+				BB22C5322B80F10700E942EF /* ViewController.swift */,
+				BB22C5342B80F10C00E942EF /* Assets.xcassets */,
+				BB22C5362B80F10C00E942EF /* Main.storyboard */,
+				BB22C5392B80F10C00E942EF /* Turtle.entitlements */,
+				BB22C5432B81C29D00E942EF /* GameUtils.swift */,
+			);
+			path = Turtle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB22C5262B80F10700E942EF /* Turtle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB22C53C2B80F10C00E942EF /* Build configuration list for PBXNativeTarget "Turtle" */;
+			buildPhases = (
+				BB22C5232B80F10700E942EF /* Sources */,
+				BB22C5242B80F10700E942EF /* Frameworks */,
+				BB22C5252B80F10700E942EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Turtle;
+			productName = Turtle;
+			productReference = BB22C5272B80F10700E942EF /* Turtle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB22C51F2B80F10700E942EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					BB22C5262B80F10700E942EF = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = BB22C5222B80F10700E942EF /* Build configuration list for PBXProject "Turtle" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB22C51E2B80F10600E942EF;
+			productRefGroup = BB22C5282B80F10700E942EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB22C5262B80F10700E942EF /* Turtle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB22C5252B80F10700E942EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB22C52D2B80F10700E942EF /* GameScene.sks in Resources */,
+				BB22C5352B80F10C00E942EF /* Assets.xcassets in Resources */,
+				BB22C52F2B80F10700E942EF /* Actions.sks in Resources */,
+				BB22C5382B80F10C00E942EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB22C5232B80F10700E942EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB22C5422B81AF1500E942EF /* SKTrack.swift in Sources */,
+				BB22C5442B81C29D00E942EF /* GameUtils.swift in Sources */,
+				BB22C5332B80F10700E942EF /* ViewController.swift in Sources */,
+				BB22C5402B80F8B900E942EF /* SKTurtle.swift in Sources */,
+				BB22C5312B80F10700E942EF /* GameScene.swift in Sources */,
+				BB22C54A2B81DB9300E942EF /* Track.swift in Sources */,
+				BB22C5462B81CA9100E942EF /* TurtleController.swift in Sources */,
+				BB22C52B2B80F10700E942EF /* AppDelegate.swift in Sources */,
+				BB22C5482B81CB0800E942EF /* Turtle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB22C5362B80F10C00E942EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB22C5372B80F10C00E942EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB22C53A2B80F10C00E942EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB22C53B2B80F10C00E942EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		BB22C53D2B80F10C00E942EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Turtle/Turtle.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mame.Turtle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BB22C53E2B80F10C00E942EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Turtle/Turtle.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mame.Turtle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB22C5222B80F10700E942EF /* Build configuration list for PBXProject "Turtle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB22C53A2B80F10C00E942EF /* Debug */,
+				BB22C53B2B80F10C00E942EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB22C53C2B80F10C00E942EF /* Build configuration list for PBXNativeTarget "Turtle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB22C53D2B80F10C00E942EF /* Debug */,
+				BB22C53E2B80F10C00E942EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB22C51F2B80F10700E942EF /* Project object */;
+}
