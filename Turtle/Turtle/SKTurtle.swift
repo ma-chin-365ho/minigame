@@ -38,8 +38,14 @@ class SKTurtle : Turtle {
     }
     
     private func mv(toPoint : CGPoint, isUpdateTrack : Bool) {
-        let action = SKAction.move(to: toPoint, duration: 0.0)
-        self.node!.run(action)
+        
+        /*
+            NOTE:ノード間移動過程を見せないため、SKActionではなく、position代入とする。
+                 SKActionの場合スキップ再生不可。
+         */
+        // let action = SKAction.move(to: toPoint, duration: 0.0)
+        // self.node!.run(action)
+        self.node?.position = toPoint
         if (isUpdateTrack) {
             self.track?.update(x: toPoint.x, y: toPoint.y)
         }

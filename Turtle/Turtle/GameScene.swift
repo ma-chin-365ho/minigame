@@ -8,9 +8,16 @@
 import SpriteKit
 import GameplayKit
 
+enum KeyCode: UInt16 {
+    case space = 49
+    case n = 45
+}
+
 enum GameStatus {
     case play
     case stop
+    case skip
+    case skiping
 }
 
 class GameScene: SKScene {
@@ -21,7 +28,7 @@ class GameScene: SKScene {
     var drawIntervalSec : TimeInterval = 0.0
     var oldTime : TimeInterval? = nil
     var status : GameStatus = .stop
-    var rewriteCount : Int = 4
+    var rewriteCount : Int = 6
     
     override func didMove(to view: SKView) {
         self.setLSystem(lSystem: PENROSE_TILES)
@@ -49,9 +56,22 @@ class GameScene: SKScene {
         )
     }
     
+    func isAccepted() -> Bool {
+        if (self.status == .skip || self.status == .skiping) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func touchDown(atPoint pos : CGPoint) {
-        self.status = .play
-        // self.turtleController?.next()
+        if (self.isAccepted()) {
+            if (self.status == .play) {
+                self.status = .stop
+            } else {
+                self.status = .play
+            }
+        }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -73,9 +93,15 @@ class GameScene: SKScene {
     }
     
     override func keyDown(with event: NSEvent) {
-        switch event.keyCode {
-        default:
-            print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
+        if (self.isAccepted()) {
+            switch event.keyCode {
+            case KeyCode.space.rawValue:
+                self.status = .skip
+            case KeyCode.n.rawValue:
+                self.turtleController?.next()
+            default:
+                print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
+            }
         }
     }
     
@@ -91,6 +117,9 @@ class GameScene: SKScene {
                 self.turtleController?.next()
                 self.oldTime = currentTime
             }
+        } else if (self.status == .skip) {
+            self.status = .skiping
+            self.turtleController?.skip()
         }
     }
 }

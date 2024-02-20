@@ -83,6 +83,13 @@ class TurtleController {
         }
     }
     
+    func skip() {
+        for ope in self.opes {
+            self.operate(ope: ope)
+        }
+        self.opes.removeAll()
+    }
+    
     private func operate(ope : Ope) {
         switch ope {
             case .forward:
