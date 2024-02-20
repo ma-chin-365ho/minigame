@@ -99,6 +99,43 @@ let HILBERT_CURVE = LSystem(
     rewirteRule: ["L": "+RF-LFL-FR+", "R": "-LF+RFR+FL-"]
 )
 
+// レヴィC曲線
+let LEVY_C_CURVE = LSystem(
+    startX: -250.0,
+    startY: -250.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 5.0,
+    rotationDeg: 45.0,
+    startCmd: "F",
+    rewirteRule: ["F": "+F--F+"]
+)
+
+// ピアノ曲線
+let PEANO_CURVE = LSystem(
+    startX: -250.0,
+    startY: 0.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 5.0,
+    rotationDeg: 90.0,
+    startCmd: "F",
+    rewirteRule: ["F": "F+F-F-F-F+F+F+F-F"]
+)
+
+// ピアノ-ゴスペル曲線
+let PEANO_GOSPER_CURVE = LSystem(
+    startX: -250.0,
+    startY: 0.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 5.0,
+    rotationDeg: 60.0,
+    startCmd: "L",
+    rewirteRule: ["L": "L+RF++RF-FL--FLFL-RF+", "R": "-FL+RFRF++RF+FL--FL-R"]
+)
+
+
 // カントール集合
 let CANTOR_SET = LSystem(
     startX: -400.0,
@@ -109,6 +146,36 @@ let CANTOR_SET = LSystem(
     rotationDeg: 0.0,
     startCmd: "F",
     rewirteRule: ["F": "FGF", "G": "GGG"]
+)
+
+// Pentigree
+let PENTIGREE = LSystem(
+    startX: -350.0,
+    startY: -250.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 3.0,
+    rotationDeg: 36.0,
+    startCmd: "F",
+    rewirteRule: ["F": "+F++F----F--F++F++F-"]
+)
+
+// ペンローズタイル
+let PENROSE_TILES = LSystem(
+    startX: 0.0,
+    startY: 0.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 3.0,
+    rotationDeg: 36.0,
+    startCmd: "[L]++[L]++[L]++[L]++[L]",
+    rewirteRule: [
+        "L": "+NF--RF[---MF--LF]+",
+        "M": "NF++RF----LF[-NF----MF]++",
+        "N": "-MF++LF[+++NF++RF]-",
+        "R": "--NF++++MF[+RF++++LF]--LF",
+        "F": ""
+    ]
 )
 
 // 木
@@ -134,4 +201,27 @@ let TREE_02 = LSystem(
     rewirteRule: ["F": "FF-[-F+F]+[+F-F]"]
 )
 
+// fractal plant
+let TREE_03 = LSystem(
+    startX: 0.0,
+    startY: -300.0,
+    startAngleDeg : 90.0,
+    forwardDistance: 3.0,
+    trackLineWidth : 0.5,
+    rotationDeg: 25.0,
+    startCmd: "L",
+    rewirteRule: ["L": "F+[[L]-L]-F[-FL]+L", "F": "FF"]
+)
+
+// fractal (binary) tree
+let TREE_04 = LSystem(
+    startX: 0.0,
+    startY: -300.0,
+    startAngleDeg : 90.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 10,
+    rotationDeg: 45.0,
+    startCmd: "A",
+    rewirteRule: ["A": "B[+A]-A", "B": "BB", ]
+)
 

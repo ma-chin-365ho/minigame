@@ -21,10 +21,10 @@ class GameScene: SKScene {
     var drawIntervalSec : TimeInterval = 0.0
     var oldTime : TimeInterval? = nil
     var status : GameStatus = .stop
-    var rewriteCount : Int = 3
+    var rewriteCount : Int = 4
     
     override func didMove(to view: SKView) {
-        self.setLSystem(lSystem: HILBERT_CURVE)
+        self.setLSystem(lSystem: PENROSE_TILES)
     }
     
     func setLSystem(lSystem : LSystem) {

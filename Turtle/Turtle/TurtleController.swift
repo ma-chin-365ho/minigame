@@ -13,6 +13,8 @@ enum Ope: Character {
     case forwardB = "B"
     case goto = "G"
     case doNothingL = "L"
+    case doNothingM = "M"
+    case doNothingN = "N"
     case doNothingR = "R"
     case rotateR = "-"
     case rotateL = "+"
@@ -53,6 +55,10 @@ class TurtleController {
                     self.opes.append(.doNothingL)
                 case Ope.doNothingR.rawValue:
                     self.opes.append(.doNothingR)
+                case Ope.doNothingM.rawValue:
+                    self.opes.append(.doNothingM)
+                case Ope.doNothingN.rawValue:
+                    self.opes.append(.doNothingN)
                 case Ope.rotateR.rawValue:
                     self.opes.append(.rotateR)
                 case Ope.rotateL.rawValue:
@@ -90,6 +96,10 @@ class TurtleController {
             case .doNothingL:
                 break // Do Nothing
             case .doNothingR:
+                break // Do Nothing
+            case .doNothingM:
+                break // Do Nothing
+            case .doNothingN:
                 break // Do Nothing
             case .rotateR:
                 self.turtle?.rotate(direction: Direction.right, degree: self.rotationDeg)
