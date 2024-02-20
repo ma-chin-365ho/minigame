@@ -52,17 +52,22 @@ class SKTurtle : Turtle {
     }
     
     func forward(distance: Double, isUpdateTrack : Bool) {
+        let toPoint = CGPoint(
+            x: self.node!.position.x + (
+                    CGFloat(distance) * cos(GameUtils.degreeToRadian(degree: self.angleDeg!))
+                ),
+            y: self.node!.position.y + (
+                    CGFloat(distance) * sin(GameUtils.degreeToRadian(degree: self.angleDeg!))
+                )
+        )
         self.mv(
-            toPoint :CGPoint(
-                x: self.node!.position.x + (
-                        CGFloat(distance) * cos(GameUtils.degreeToRadian(degree: self.angleDeg!))
-                    ),
-                y: self.node!.position.y + (
-                        CGFloat(distance) * sin(GameUtils.degreeToRadian(degree: self.angleDeg!))
-                    )
-            ),
+            toPoint : toPoint,
             isUpdateTrack: isUpdateTrack
         )
+        if (!isUpdateTrack) {
+            self.track = SKTrack(startPos: toPoint, lineWidth: self.trackLineWidth!)
+            self.scene?.addChild(self.track!.node!)
+        }
     }
     
     func warp(vec: Vec) {

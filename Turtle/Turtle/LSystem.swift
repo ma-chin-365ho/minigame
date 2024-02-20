@@ -99,6 +99,18 @@ let HILBERT_CURVE = LSystem(
     rewirteRule: ["L": "+RF-LFL-FR+", "R": "-LF+RFR+FL-"]
 )
 
+// カントール集合
+let CANTOR_SET = LSystem(
+    startX: -400.0,
+    startY: 0.0,
+    startAngleDeg : 0.0,
+    forwardDistance: 20.0,
+    trackLineWidth : 100.0,
+    rotationDeg: 0.0,
+    startCmd: "F",
+    rewirteRule: ["F": "FGF", "G": "GGG"]
+)
+
 // 木
 let TREE_01 = LSystem(
     startX: 0.0,
