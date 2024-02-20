@@ -20,7 +20,6 @@ class SKTrack : Track {
         // self.node?.fillColor = .brown
         self.path = CGMutablePath()
         self.path?.move(to: startPos)
-        self.node?.path = self.path!
     }
 
     func update(x: Double, y: Double) {

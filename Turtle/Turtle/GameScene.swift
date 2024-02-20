@@ -15,8 +15,7 @@ enum GameStatus {
 
 class GameScene: SKScene {
     
-    var track : SKTrack?
-    var turtle :SKTurtle?
+    var turtle :Turtle?
     var turtleController : TurtleController?
     // var drawIntervalSec : TimeInterval = 0.15
     var drawIntervalSec : TimeInterval = 0.0
