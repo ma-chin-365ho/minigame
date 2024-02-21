@@ -26,7 +26,7 @@ class SKLife : Life {
         for x in 0..<CELLS_X_SIZE {
             for y in 0..<CELLS_Y_SIZE {
                 self.cellNodes?[y][x] = SKShapeNode(rectOf: CGSize(width: CELL_WIDTH, height:CELL_HEIGHT))
-                self.cellNodes?[y][x]?.strokeColor = .black
+                self.cellNodes?[y][x]?.strokeColor = .blue
                 self.cellNodes?[y][x]?.fillColor = self.getCellColor(cell: DEATH)
                 self.cellNodes?[y][x]?.position = self.getCellPos(x: x, y: y)
             }
@@ -66,7 +66,14 @@ class SKLife : Life {
             super.toDeath(x: xy!.x, y: xy!.y)
         }
     }
-
+    
+    func setPattern(pos: CGPoint, cellsPattern: [[Cell]]) {
+        let xy = getCellXY(pos: pos)
+        if xy != nil {
+            super.setPattern(x: xy!.x, y: xy!.y, cellsPattern: cellsPattern)
+        }
+    }
+    
     func getOriginPos(frameX: CGFloat, frameY: CGFloat) -> CGPoint {
         return CGPoint(
             x: frameX - (CELL_WIDTH * CGFloat(CELLS_X_SIZE / 2)),

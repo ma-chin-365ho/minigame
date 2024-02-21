@@ -32,7 +32,8 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        self.life?.toggle(pos: pos)
+        // self.life?.toggle(pos: pos)
+        self.life?.setPattern(pos: pos, cellsPattern: CellsPattern.Glider)
         self.life?.draw()
     }
     

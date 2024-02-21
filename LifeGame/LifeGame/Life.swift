@@ -76,5 +76,26 @@ class Life {
     func toDeath(x: Int, y: Int) {
         self.cells[y][x] = DEATH
     }
+    
+    func setPattern(x: Int, y: Int, cellsPattern: [[Cell]]) {
+        let lenCellsPatternY = cellsPattern.count
+        
+        for cpY in 0..<lenCellsPatternY {
+            let lenCellsPatternX = cellsPattern[cpY].count
+            for cpX in 0..<lenCellsPatternX {
+                let cX = x + (cpX - Int(lenCellsPatternX / 2)) + (1 - (lenCellsPatternX % 2))
+                let cY = y + (cpY - Int(lenCellsPatternY / 2)) + (1 - (lenCellsPatternY % 2))
+                
+                if (
+                    (cX >= 0) &&
+                    (cX < CELLS_X_SIZE) &&
+                    (cY >= 0) &&
+                    (cY < CELLS_Y_SIZE)
+                ) {
+                    self.cells[cY][cX] = cellsPattern[cpY][cpX]
+                }
+            }
+        }
+    }
 }
 
