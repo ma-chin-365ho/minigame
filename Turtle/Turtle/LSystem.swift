@@ -44,8 +44,8 @@ let KOCH_CURVE = LSystem(
     startX: -350.0,
     startY: -250.0,
     startAngleDeg : 0.0,
-    forwardDistance: 30.0,
-    trackLineWidth : 6.0,
+    forwardDistance: 5.0,
+    trackLineWidth : 3.0,
     rotationDeg: 60.0,
     startCmd: "F",
     rewirteRule: ["F": "F+F--F+F"]
@@ -204,7 +204,7 @@ let TREE_02 = LSystem(
 // fractal plant
 let TREE_03 = LSystem(
     startX: 0.0,
-    startY: -300.0,
+    startY: -350.0,
     startAngleDeg : 90.0,
     forwardDistance: 3.0,
     trackLineWidth : 0.5,
