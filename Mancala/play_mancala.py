@@ -9,7 +9,7 @@ def play_mancala_stdio():
     mancala_rule = MancalaRule(
         CNT_PLAYER, CNT_POCKET, CNT_START_STONE
     )
-    
+
     print("========================================")
     print("Mancala Start !!")
     print("  (Game Stop " + str([GAME_STOPPED_CODE]) + ")")
@@ -24,12 +24,14 @@ def play_mancala_stdio():
             break
         except:
             pass
+    
+    mancala_rule.turn_n_player = turn_n_player
 
     while True:
         print("========================================")
         print("Pocket: " + str(mancala_rule.pocket))
         print("Goal: " + str(mancala_rule.goal))
-        print("Turn: " + str(turn_n_player))
+        print("Turn: " + str(mancala_rule.turn_n_player))
         print("========================================")
 
         while True:
@@ -37,14 +39,14 @@ def play_mancala_stdio():
                 select_n_pocket = int(input("Select Pocket " + str(mancala_rule.selectable_n_pockets) + ": "))
                 if select_n_pocket == GAME_STOPPED_CODE:
                     return
-                if not mancala_rule.is_selectable_pocket(turn_n_player, select_n_pocket):
+                if not mancala_rule.is_selectable_pocket(mancala_rule.turn_n_player, select_n_pocket):
                     raise Exception("Out of Selectable Pockets")
                 break
             except:
                 pass
 
-        turn_n_player = mancala_rule.take_stone(turn_n_player, select_n_pocket)
-        if turn_n_player is None:
+        mancala_rule.take_stone(select_n_pocket)
+        if mancala_rule.turn_n_player is None:
             print("")
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             print("Game Over!!!")

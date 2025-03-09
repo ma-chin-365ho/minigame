@@ -10,13 +10,12 @@ class MancalaRule():
         self.goal = [0] * cnt_player
         self.selectable_n_players = [c for c in range(self.cnt_player)]
         self.selectable_n_pockets = [c for c in range(self.cnt_pocket)]
+        self.turn_n_player = None
         self.winner = None
         return
 
-    def take_stone(self, n_player, n_pocket):
-        """
-        Returns: 数値: 次のプレイヤーの番号、None: ゲーム終了
-        """
+    def take_stone(self, n_pocket):
+        n_player = self.turn_n_player
         cnt_stone = self.pocket[n_player][n_pocket]
         self.pocket[n_player][n_pocket] = 0
         pos_player = n_player
@@ -29,9 +28,10 @@ class MancalaRule():
                     # ゴールでちょうど終わる時
                     self.winner = self.__get_winner()
                     if self.winner is None:
-                        return n_player
+                        self.turn_n_player = n_player
                     else:
-                        return None
+                        self.turn_n_player = None
+                    return
                 else:
                     pos_pocket = -1 # ポジションが最初に戻る。
                     pos_player = self.__next_player(pos_player)
@@ -39,9 +39,10 @@ class MancalaRule():
                 self.pocket[pos_player][pos_pocket] += 1
         self.winner = self.__get_winner()
         if self.winner is None:
-            return self.__next_player(n_player)
+            self.turn_n_player = self.__next_player(n_player)
         else:
-            return None
+            self.turn_n_player = None
+        return
 
     def is_selectable_pocket(self, n_player, n_pocket):
         if not n_pocket in self.selectable_n_pockets:
